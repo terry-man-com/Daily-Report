@@ -57,6 +57,9 @@ body{
 .button:hover {
   opacity: 0.8;
 }
+/* .delete {
+  font-size: 15px;
+} */
 
 /* history-link */
 .history-link {
@@ -69,6 +72,10 @@ body{
 }
 
 /* table */
+.table-wrapper,
+.form-wrapper {
+  padding: 10px;
+}
 .table {
   width: 100%;
 }
