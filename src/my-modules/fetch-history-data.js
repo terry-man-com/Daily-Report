@@ -8,11 +8,14 @@ export const fetchHistoryData = async (getDocs, collection, db) => {
   // データをテーブル表の形式に合わせてHTMLに挿入
   querySnapshot.forEach((doc) => {
     console.log(`${doc.id} => ${doc.data()}`);
-    tags += `<tr><td>${doc.data().date}</td>
+    tags += `<tr>
+              <td>${doc.data().date}</td>
               <td>${doc.data().name}</td>
               <td>${doc.data().work}</td>
               <td>${doc.data().comment}</td>
-              </tr>`;
+              </tr>
+              `;
   });
   document.getElementById("js-history").innerHTML = tags;
+
 };

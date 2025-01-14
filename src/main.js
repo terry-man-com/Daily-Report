@@ -1,5 +1,10 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc, deleteDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  addDoc,
+} from "firebase/firestore";
 
 // 設定情報
 const firebaseConfig = {
@@ -21,25 +26,16 @@ const db = getFirestore(app);
 import { fetchHistoryData } from "./my-modules/fetch-history-data";
 
 // Cloud Firestoreから取得したデータを表示する
-if(document.getElementById("js-history")) {
+if (document.getElementById("js-history")) {
   fetchHistoryData(getDocs, collection, db);
 }
 
-
-// Cloud Firestoreに登録したデータを削除する。
-// const deleteHistoryData = async (e) => {
-//   e.preventDefault();
-
-//   try {
-//     const docRef = await deleteDoc(doc(db, "reports"))
-//   }
-// }
 // submitData呼び出し
 import { submitData } from "./my-modules/submit-data";
 
 // submitボタンを押下し、Cloud Firestoreにデータ送信した時の処理
-if(document.getElementById("js-form")) {
+if (document.getElementById("js-form")) {
   document
     .getElementById("js-form")
     .addEventListener("submit", (e) => submitData(e, addDoc, collection, db));
-};
+}
